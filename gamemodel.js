@@ -83,4 +83,40 @@ class GameModel {
     }
     this.renderGameState()
   }
+
+  //LOGICA ROTACION DE LAS PIEZAS
+  move(right) {
+    if (this.fallingPiece === null) {
+      return
+    }
+    let x = this.fallingPiece.x
+    let y = this.fallingPiece.y
+    if (right) {
+    //moviendo derecha
+      if (!this.collision(x + 1, y)) {
+        this.fallingPiece.x += 1
+      }
+    } else {
+      //moviendo izquierda
+      if (!this.collision(x - 1, y)) {
+        this.fallingPiece.x -= 1
+      }
+    }
+    this.renderGameState()
+  }
+  rotate() {
+    if (this.fallingPiece !== null) {
+      let shape = this.fallingPiece.shape
+      //transposicion de la matriz
+      for (let y = 0; y < shape.length; ++y) {
+        for (let x = 0; x < y; ++x) {
+          [this.fallingPiece.shape[x][y], this.fallingPiece.shape[y][x]] =
+          [this.fallingPiece.shape[y][x], this.fallingPiece.shape[x][y]]
+        }
+      }
+      //REVERSION DEL ORDEN LAS LINEAS
+      this.fallingPiece.shape.forEach((row => row.reverse()))
+    }
+    this.renderGameState()
+  }
 }
