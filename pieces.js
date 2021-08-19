@@ -12,7 +12,7 @@ class Piece {
       row.map((cell, i) => {
         if (cell > 0) {
           this.ctx.fillStyle = COLORS[cell]
-          this.ctx.fillRect(this.x + JSON, this.y + i, 1, 1)
+          this.ctx.fillRect(this.x + j, this.y + i, 1, 1)
         }
       })
     })
