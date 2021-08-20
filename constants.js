@@ -1,6 +1,6 @@
 const GAME_CLOCK = 1000; // game of the game //
 const BLOCK_SIDE_LENGTH = 30; // the length of the block's side //
-const ROW = 16; // number of rows for the canvas //
+const ROWS = 16; // number of rows for the canvas //
 const COLS = 10; //number of columns for the canvas//
 const SCORE_WORTH = 10;
 
