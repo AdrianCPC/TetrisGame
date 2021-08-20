@@ -26,7 +26,7 @@ class GameModel {
         if (shape[i][j] > 0) {
           let p = x + j
           let q = y + i
-          if (p >= 0 && p < COLS && q < ROWS) {
+          if (p >= 0 && p < COLS && q < ROWS) { //Checking of the part is within the limits
             if (this.grid[q][p] > 0) {
               return true
             }
