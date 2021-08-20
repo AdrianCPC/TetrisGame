@@ -23,7 +23,7 @@ let newGameState = () => {
         // Here we check if there is a falling piece //
         const rand = Math.round(Math.random() * 6) + 1; // if there is a falling piece, in this part the game select a random piece//
         /* Math.round = Returns the value of the given number rounded to the nearest integer. */
-        const newPiece = new newPiece(SHAPES[rand], ctx); //the new piece is saved here //
+        const newPiece = new Piece(SHAPES[rand], ctx); //the new piece is saved here //
         model.fallingPiece = newPiece;
         model.moveDown(); // The new piece goes down automatcally //
     } else {
@@ -33,7 +33,7 @@ let newGameState = () => {
 
 /*This fullSend function tells us if there is a full line and then get rid of that and also increase the score */
 const fullSend = () => {
-    const allfilled = (row) => {
+    const allFilled = (row) => {
         for (let x of row) {
             // this row is full or no //
             if (x === 0) {
