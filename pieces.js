@@ -10,7 +10,7 @@ class Piece {
   //Rendering piece
   renderPiece() {
     this.shape.map((row, i) => {
-      row.map((cell, i) => {
+      row.map((cell, j) => {
         if (cell > 0) {
           this.ctx.fillStyle = COLORS[cell]//Fill empty squares with colour
           this.ctx.fillRect(this.x + j, this.y + i, 1, 1)
