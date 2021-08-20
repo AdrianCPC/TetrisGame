@@ -1,6 +1,6 @@
-const GAME_CLOCK = 1000;
-const BLOCK_SIDE_LENGTH = 30;
-const ROW = 20; // number of rows for the canvas //
+const GAME_CLOCK = 1000; // game of the game //
+const BLOCK_SIDE_LENGTH = 30; // the length of the block's side //
+const ROW = 16; // number of rows for the canvas //
 const COLS = 10; //number of columns for the canvas//
 const SCORE_WORTH = 10;
 
@@ -35,7 +35,7 @@ const SHAPES = [
         [4, 4],
     ],
 
-    /*4. This is the fourth shape in Tetris. The "z" */
+    /*4. This is the fourth shape in Tetris. The "z" the other way around */
     [
         [0, 5, 5],
         [5, 5, 0],
@@ -58,6 +58,7 @@ const SHAPES = [
     ],
 ];
 
+// These are random colors of every shape //
 const COLORS = [
     "#000000",
     "#0000FF",
