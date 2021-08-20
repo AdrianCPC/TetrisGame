@@ -6,7 +6,7 @@ class Piece {
     this.x = Math.floor(COLS / 2)
   }
 
-  //RENDERIZADO DE PIEZAS
+  //Rendering pieces
   renderPiece() {
     this.shape.map((row, i) => {
       row.map((cell, i) => {

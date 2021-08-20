@@ -1,11 +1,11 @@
 class GameModel {
   constructor(ctx) {
     this.ctx = ctx
-    this.fallingPiece = null //Piezas
+    this.fallingPiece = null //Pieces
     this.grid = this.makeStartingGrid()
   }
 
-//CREACION DE FILAS Y COLUMNAS
+//Creating rows and columns
   makeStartingGrid() {
     let grid = []
     for (var i = 0; i < ROWS; i++) {
@@ -17,7 +17,7 @@ class GameModel {
   }
 
 
-  //LOGICA PIEZAS CAYENDO
+  //Collision logic
   collision(x, y) { 
     const shape = this.fallingPiece.shape
     const n = shape.length
@@ -39,7 +39,7 @@ class GameModel {
     return false
   }
 
-  //LOGICA RENDER DEL JUEGO
+  //Game rendering logic
   renderGameState() {
     for (let i = 0; i < this.grid.length; i++) {
       for (let j = 0; j < this.grid[i].length; j++) {
@@ -53,7 +53,7 @@ class GameModel {
     }
   }
 
-  //LOGICA MOVIMIENTO HACIA ABAJO
+  //Logical downward movement
   moveDown() {
     if (this.fallingPiece === null) {
       this.renderGameState()
@@ -72,7 +72,7 @@ class GameModel {
         })
       })
 
-      //LOGICA GAME OVER
+      //Logic game over
       if (this.fallingPiece.y === 0) {
         alert("Game Over!")
         this.grid = this.makeStartingGrid()
@@ -84,7 +84,7 @@ class GameModel {
     this.renderGameState()
   }
 
-  //LOGICA ROTACION DE LAS PIEZAS
+  //Logic of rotation of the parts
   move(right) {
     if (this.fallingPiece === null) {
       return
@@ -92,12 +92,12 @@ class GameModel {
     let x = this.fallingPiece.x
     let y = this.fallingPiece.y
     if (right) {
-    //moviendo derecha
+    //moving right
       if (!this.collision(x + 1, y)) {
         this.fallingPiece.x += 1
       }
     } else {
-      //moviendo izquierda
+      //moving left
       if (!this.collision(x - 1, y)) {
         this.fallingPiece.x -= 1
       }
@@ -107,14 +107,14 @@ class GameModel {
   rotate() {
     if (this.fallingPiece !== null) {
       let shape = this.fallingPiece.shape
-      //transposicion de la matriz
+      //matrix transposition
       for (let y = 0; y < shape.length; ++y) {
         for (let x = 0; x < y; ++x) {
           [this.fallingPiece.shape[x][y], this.fallingPiece.shape[y][x]] =
           [this.fallingPiece.shape[y][x], this.fallingPiece.shape[x][y]]
         }
       }
-      //REVERSION DEL ORDEN LAS LINEAS
+      //Reversal of the order of the lines
       this.fallingPiece.shape.forEach((row => row.reverse()))
     }
     this.renderGameState()
