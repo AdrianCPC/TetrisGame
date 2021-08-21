@@ -9,4 +9,4 @@ _Juego de Tetris creado de manera colaborativa para dar cumplimiento con el obje
 * **Adrián Peña** - 📢 - [AdrianCPC](https://github.com/AdrianCPC)
 
 ## Licencia 📄
-Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia (MIT) - mira el archivo [LICENSE](LICENSE) para detalles
