@@ -60,11 +60,12 @@ const SHAPES = [
 
 // These are random colors of every shape //
 const COLORS = [
-    "#000000",
-    "#0000FF",
-    "#FFFF00",
-    "#00FF00",
-    "#FF0000",
-    "#10FF01",
-    "#FF0001",
+    "#1C2833",
+    "#16A085",
+    "#884EA0",
+    "#8E44AD",
+    "#F39C12",
+    "#95A5A6",
+    "#1C2833",
+    "#9A7D0A",
 ];
